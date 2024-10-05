@@ -1,4 +1,5 @@
 streamlit
 scipy
 matplotlib
+openpyxl
 # any other libraries your app uses
