@@ -13,6 +13,8 @@ import streamlit as st
 @st.cache_data
 @st.cache_resource
 
+
+
 def Fiteo(x,y,p_ini):
     bounds=((0,0),(np.inf,1))
     best_val,cov=cf(N_Ohm,x,y,p0=p_ini,method='trf',
@@ -22,7 +24,22 @@ def Fiteo(x,y,p_ini):
 def N_Ohm(v,G,r):
     return G*((v)**r)
 
-st.write('Ley de Ohm')
+
+st.markdown("""
+    <style>
+        .big-font {
+            font-size:50px !important;
+        }
+        .medium-font {
+            font-size:30px !important;
+        }
+        .small-font {
+            font-size:15px !important;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+st.markdown('<p class="big-font">Ley de Ohm!</p>', unsafe_allow_html=True)
+
 uploaded_file =  st.file_uploader("Choose a file", 
                                   type=['csv', 'xlsx', 'txt'])
 
